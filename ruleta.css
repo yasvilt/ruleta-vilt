@@ -12,6 +12,10 @@ body {
   
 }
 
+.favicon {
+    width: 32px;
+    height: auto;
+}
 .logovilt {
   width: 100%;
   display: flex;
