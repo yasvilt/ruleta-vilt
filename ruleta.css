@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+    background-color: #e8e8e8;
+    display: flex;      
+    align-items: stretch;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    overflow: hidden;
+    
+  
+}
+
+.logovilt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.logoimg {
+  height: 3em;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size:2.5rem;
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  color: #37393e;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+.roulette {
+  font-family: "Inter", sans-serif;
+  position: relative;
+  width: 600px; /*tamaño de la ruleta*/
+  height: 600px;/*tamaño de la ruleta*/
+  
+}
+.roulette .shadow {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: 0 0.5em 2 rgba(0, 0, 0, 0.55) inset;
+}
+.roulette .markers {
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  overflow: hidden;
+  border-radius: 500%;
+}
+.roulette .markers .marker {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -200px;
+  left: 200px;
+  -webkit-transform-origin: 0% 650px;
+  transform-origin: 0% 650px;
+  border: 50 solid transparent;
+}
+.roulette .markers .triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1.5em 0 1.5em 1.5em;
+  border-color: transparent transparent transparent #007bff;
+  position: absolute;
+  border-left-color: #fff;
+  top: 50%;
+  left: 0;
+  margin-top: -22px;
+  -webkit-filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 0.25em 4px);
+  filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 0.25em 4px);
+}
+.roulette .spinner {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-transform: rotateZ(5deg);
+  transform: rotateZ(0deg);
+  /*performance boost*/
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.roulette .spinner .item {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -299px;
+  left: 300px;
+  -webkit-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+  border: 0 solid transparent;
+}
+.roulette .spinner .item .label {
+  display: block;
+  position: absolute;
+  color: #fff;
+  font-weight: 300;
+  top: 11px;
+  left: 0;
+  white-space: nowrap;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  font-size: 0.8em;
+}
+.roulette .spinner .item .label i,
+.roulette .spinner .item .label .text {
+  display: inline-block;
+  vertical-align: left;
+  line-height: 1;
+  font-size: 0.88em;
+  text-indent: 0.9rem;
+  font-weight: 600;
+}
+.roulette .spinner .item .label i {
+  margin-right: 0.1em;
+}
+.roulette .button {
+  width: 7em;
+  height: 7em;
+  line-height: 7em;
+  top: 50%;
+  left: 50%;
+  margin-left: -3.5em;
+  margin-top: -3.5em;
+  font-weight: 800;
+  z-index: 998;
+  position: absolute;
+  background: #fff;
+  border: none;
+  border-radius: 100%;
+  color: #999;
+  outline: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-shadow: 0 0.4em 0 rgba(0, 0, 0, 0.25);
+  text-align: center;
+  transition: -webkit-transform 0.15s;
+  transition: transform 0.15s;
+  transition: transform 0.15s, -webkit-transform 0.15s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.roulette .button:hover {
+  color: inherit;
+}
+.roulette .button span {
+  font-size: 1.6em;
+}
+
+.roulette.busy .button {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  box-shadow: 0 0.15em 0 rgba(0, 0, 0, 0.25);
+  color: #999;
+  cursor: default;
+}
+
+/* CUSTOM LABELS */
+
+.roulette .spinner .item[data-type="question"] .label {
+  font-size: 1em;
+  font-weight: 700;
+}
+.roulette .spinner .item[data-type="time"] .label {
+  color: #000000;
+}
